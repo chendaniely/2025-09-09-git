@@ -1,0 +1,59 @@
+ 501  cd git/
+  502  git clone git@github.com:chendaniely/2025-09-09-git.git
+  503  cd 2025-09-09-git/
+  504  ls
+  505  ls -alh
+  506  git status
+  507  code README.md
+  508  git status
+  509  git add README.md 
+  510  status
+  511  git status
+  512  git commit
+  513  git status
+  514  git push origin main
+  515  ls
+  516  cat README.md 
+  517  git pull origin main
+  518  cat README.md 
+  519  git log
+  520  git log
+  521  git log
+  522  git log --oneline
+  523  git log --oneline --graph
+  524  git log --oneline --graph --all
+  525  code .
+  526  cdoe  .
+  527  code .
+  528  git status
+  529  git diff
+  530  git status
+  531  git add README.md 
+  532  git status
+  533  git commit -m "define log locally"
+  534  git status
+  535  git push origin main
+  536  git pull origin main
+  537  git config pull.rebase false
+  538  git pull origin main
+  539  code README.md 
+  540  cat README.md 
+  541  code README.md 
+  542  git status
+  543  git add README.md 
+  544  git status
+  545  git commit -m "fix conflicts, combine both and edit"
+  546  git push origin main
+  547  ls
+  548  touch file_{1,2,3}.csv
+  549  lls
+  550  ls
+  551  git status
+  552  code .gitignore
+  553  git status
+  554  git add .gitignore 
+  555  git commit -m "create ignore file"
+  556  git push origin main
+  557  ls
+  558  nano output.txt
+  559  history

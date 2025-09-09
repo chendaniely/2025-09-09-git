@@ -1,0 +1,303 @@
+[dan@blackfyre ~]$ cd git/
+[dan@blackfyre git]$ git clone git@github.com:chendaniely/2025-09-09-git.git
+Cloning into '2025-09-09-git'...
+warning: You appear to have cloned an empty repository.
+[dan@blackfyre git]$ cd 2025-09-09-git/
+[dan@blackfyre 2025-09-09-git]$ ls
+[dan@blackfyre 2025-09-09-git]$ ls -alh
+total 0
+drwxr-xr-x 1 dan dan   8 Sep  9 08:10 .
+drwxr-xr-x 1 dan dan 232 Sep  9 08:10 ..
+drwxr-xr-x 1 dan dan  82 Sep  9 08:10 .git
+[dan@blackfyre 2025-09-09-git]$ git status
+On branch main
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+[dan@blackfyre 2025-09-09-git]$ code README.md
+[dan@blackfyre 2025-09-09-git]$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+[dan@blackfyre 2025-09-09-git]$ git add README.md 
+[dan@blackfyre 2025-09-09-git]$ 
+[dan@blackfyre 2025-09-09-git]$ status
+bash: status: command not found
+[dan@blackfyre 2025-09-09-git]$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   README.md
+
+[dan@blackfyre 2025-09-09-git]$ git commit
+[main (root-commit) 769cb94] this is the first line
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+[dan@blackfyre 2025-09-09-git]$ git status
+On branch main
+Your branch is based on 'origin/main', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+[dan@blackfyre 2025-09-09-git]$ git push origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 255 bytes | 255.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:chendaniely/2025-09-09-git.git
+ * [new branch]      main -> main
+[dan@blackfyre 2025-09-09-git]$ ls
+README.md
+[dan@blackfyre 2025-09-09-git]$ cat README.md 
+# 2025-09-09-git
+[dan@blackfyre 2025-09-09-git]$ git pull origin main
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 1017 bytes | 1017.00 KiB/s, done.
+From github.com:chendaniely/2025-09-09-git
+ * branch            main       -> FETCH_HEAD
+   769cb94..e2debea  main       -> origin/main
+Updating 769cb94..e2debea
+Fast-forward
+ README.md | 3 +++
+ 1 file changed, 3 insertions(+)
+[dan@blackfyre 2025-09-09-git]$ cat README.md 
+# 2025-09-09-git
+
+- `push`: `git push origin main` will send code (branch `main`) to the remote (origin)
+- `pull`: `git pull origin main` will bring down code from the branch in the remote
+[dan@blackfyre 2025-09-09-git]$ git log
+commit e2debea6cd9d4b4450026685f22f4b47277ffdf9 (HEAD -> main, origin/main)
+Author: Daniel Chen <chendaniely@gmail.com>
+Date:   Tue Sep 9 08:29:54 2025 -0700
+
+    Add git push and pull commands to README
+
+commit 769cb94a044ec18f81cdb3cd51ffd2e68a08a060
+Author: Daniel Chen <chendaniely@users.noreply.github.com>
+Date:   Tue Sep 9 08:17:15 2025 -0700
+
+    this is the first line
+    
+    this is the second line
+[dan@blackfyre 2025-09-09-git]$ git log
+commit e2debea6cd9d4b4450026685f22f4b47277ffdf9 (HEAD -> main, origin/main)
+Author: Daniel Chen <chendaniely@gmail.com>
+Date:   Tue Sep 9 08:29:54 2025 -0700
+
+    Add git push and pull commands to README
+
+commit 769cb94a044ec18f81cdb3cd51ffd2e68a08a060
+Author: Daniel Chen <chendaniely@users.noreply.github.com>
+Date:   Tue Sep 9 08:17:15 2025 -0700
+
+    this is the first line
+    
+    this is the second line
+[dan@blackfyre 2025-09-09-git]$ git log --oneline
+e2debea (HEAD -> main, origin/main) Add git push and pull commands to README
+769cb94 this is the first line
+[dan@blackfyre 2025-09-09-git]$ git log --oneline --graph
+* e2debea (HEAD -> main, origin/main) Add git push and pull commands to README
+* 769cb94 this is the first line
+[dan@blackfyre 2025-09-09-git]$ git log --oneline --graph --all
+* e2debea (HEAD -> main, origin/main) Add git push and pull commands to README
+* 769cb94 this is the first line
+[dan@blackfyre 2025-09-09-git]$ code .
+[dan@blackfyre 2025-09-09-git]$ cdoe  .
+bash: cdoe: command not found
+[dan@blackfyre 2025-09-09-git]$ code .
+[dan@blackfyre 2025-09-09-git]$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[dan@blackfyre 2025-09-09-git]$ git diff
+diff --git a/README.md b/README.md
+index 8f21028..8be2afb 100644
+--- a/README.md
++++ b/README.md
+@@ -2,3 +2,5 @@
+ 
+ - `push`: `git push origin main` will send code (branch `main`) to the remote (origin)
+ - `pull`: `git pull origin main` will bring down code from the branch in the remote
++
++- `log`: shows you the history
+[dan@blackfyre 2025-09-09-git]$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[dan@blackfyre 2025-09-09-git]$ git add README.md 
+[dan@blackfyre 2025-09-09-git]$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+[dan@blackfyre 2025-09-09-git]$ git commit -m "define log locally"
+[main 706fa60] define log locally
+ 1 file changed, 2 insertions(+)
+[dan@blackfyre 2025-09-09-git]$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+[dan@blackfyre 2025-09-09-git]$ git push origin main
+To github.com:chendaniely/2025-09-09-git.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'github.com:chendaniely/2025-09-09-git.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+[dan@blackfyre 2025-09-09-git]$ git pull origin main
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 1.02 KiB | 1.02 MiB/s, done.
+From github.com:chendaniely/2025-09-09-git
+ * branch            main       -> FETCH_HEAD
+   e2debea..e2c5533  main       -> origin/main
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint:
+hint:   git config pull.rebase false  # merge
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint:
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+[dan@blackfyre 2025-09-09-git]$ git config pull.rebase false
+[dan@blackfyre 2025-09-09-git]$ git pull origin main
+From github.com:chendaniely/2025-09-09-git
+ * branch            main       -> FETCH_HEAD
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+[dan@blackfyre 2025-09-09-git]$ code README.md 
+[dan@blackfyre 2025-09-09-git]$ cat README.md 
+# 2025 09 09 git
+
+- `push`: `git push origin main` will send code (branch `main`) to the remote (origin)
+- `pull`: `git pull origin main` will bring down code from the branch in the remote
+
+<<<<<<< HEAD
+- `log`: shows you the history
+=======
+- `diff`: shows you the differences from your last known git state
+>>>>>>> e2c55331cba733052904c825b4fb972b53fcd414
+[dan@blackfyre 2025-09-09-git]$ code README.md 
+[dan@blackfyre 2025-09-09-git]$ git status
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[dan@blackfyre 2025-09-09-git]$ git add README.md 
+[dan@blackfyre 2025-09-09-git]$ git status
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   README.md
+
+[dan@blackfyre 2025-09-09-git]$ git commit -m "fix conflicts, combine both and edit"
+[main d0bab0a] fix conflicts, combine both and edit
+[dan@blackfyre 2025-09-09-git]$ git push origin main
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 669 bytes | 669.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To github.com:chendaniely/2025-09-09-git.git
+   e2c5533..d0bab0a  main -> main
+[dan@blackfyre 2025-09-09-git]$ ls
+README.md
+[dan@blackfyre 2025-09-09-git]$ touch file_{1,2,3}.csv
+[dan@blackfyre 2025-09-09-git]$ lls
+bash: lls: command not found
+[dan@blackfyre 2025-09-09-git]$ ls
+file_1.csv  file_2.csv  file_3.csv  README.md
+[dan@blackfyre 2025-09-09-git]$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file_1.csv
+        file_2.csv
+        file_3.csv
+
+nothing added to commit but untracked files present (use "git add" to track)
+[dan@blackfyre 2025-09-09-git]$ code .gitignore
+[dan@blackfyre 2025-09-09-git]$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+[dan@blackfyre 2025-09-09-git]$ git add .gitignore 
+[dan@blackfyre 2025-09-09-git]$ git commit -m "create ignore file"
+[main 362dfad] create ignore file
+ 1 file changed, 2 insertions(+)
+ create mode 100644 .gitignore
+[dan@blackfyre 2025-09-09-git]$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 309 bytes | 309.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:chendaniely/2025-09-09-git.git
+   d0bab0a..362dfad  main -> main
